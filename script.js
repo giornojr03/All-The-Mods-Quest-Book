@@ -502,7 +502,9 @@ document.getElementById(
         document
             .querySelectorAll(".quest")
             .forEach(
-                quest => quest.classList.add("open")
+                quest => {
+                    quest.classList.add("open");
+                }
             );
 
     }
