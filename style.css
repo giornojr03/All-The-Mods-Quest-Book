@@ -90,10 +90,11 @@ input {
     background: #191c22;
     color: white;
 }
+
 input:focus {
     outline: none;
     border-color: #f5c542;
-    box-shadow: 0 0 8px rgba(245, 197, 66, 0.25;
+    box-shadow: 0 0 8px rgba(245, 197, 66, 0.25);
 }
 
 button {
@@ -174,12 +175,19 @@ button:hover {
     padding: 15px;
 }
 
-summary::-webkit-details-marker {
-    display: none;
-}
-
 .quest-title {
     font-weight: bold;
+}
+
+.quest-title::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.15s ease;
+}
+
+.quest.open .quest-title::before {
+    transform: rotate(90deg);
 }
 
 .quest-description {
@@ -190,6 +198,11 @@ summary::-webkit-details-marker {
 
 .quest-body {
     padding: 0 15px 15px 38px;
+    display: none;
+}
+
+.quest.open .quest-body {
+    display: block;
 }
 
 .check {
@@ -221,6 +234,11 @@ summary::-webkit-details-marker {
     accent-color: #f5c542;
 }
 
+.check:has(input:checked) span {
+    text-decoration: line-through;
+    opacity: 0.55;
+}
+
 .quest.completed {
     opacity: 0.65;
 }
@@ -228,6 +246,7 @@ summary::-webkit-details-marker {
 .quest.completed .quest-title {
     text-decoration: line-through;
 }
+
 .quest.completed .quest-title::before {
     content: "✓ ";
     color: #67d36f;
@@ -253,25 +272,4 @@ footer {
     #columns {
         grid-auto-columns: 86vw;
     }
-}
-    .quest-body {
-        display: none;
-    }
-
-    .quest.open .quest-body {
-        display: block;
-    }
-.check:has(input:checked) span {
-    text-decoration: line-through;
-    opacity: 0.55;
-    }
-.quest-title::before {
-    content: "▸";
-    display: inline-block;
-    margin-right: 8px;
-    transition: transform 0.15s ease;
-}
-
-.quest.open .quest-title::before {
-    transform: rotate(90deg);
 }
