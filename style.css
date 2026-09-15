@@ -204,6 +204,10 @@ summary::-webkit-details-marker {
 .quest.completed .quest-title {
     text-decoration: line-through;
 }
+.quest.completed .quest-title::before {
+    content: "✓ ";
+    color: #67d36f;
+}
 
 footer {
     padding: 20px 5vw;
