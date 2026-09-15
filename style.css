@@ -222,3 +222,10 @@ footer {
         grid-auto-columns: 86vw;
     }
 }
+    .quest-body {
+        display: none;
+    }
+
+    .quest.open .quest-body {
+        display: block;
+    }
