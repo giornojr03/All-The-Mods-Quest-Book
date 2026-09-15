@@ -90,6 +90,11 @@ input {
     background: #191c22;
     color: white;
 }
+input:focus {
+    outline: none;
+    border-color: #f5c542;
+    box-shadow: 0 0 8px rgba(245, 197, 66, 0.25;
+}
 
 button {
     padding: 11px 14px;
