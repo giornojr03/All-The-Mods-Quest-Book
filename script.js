@@ -296,10 +296,22 @@ function render() {
             const summary =
                 document.createElement("div");
 
+            const completedTasks =
+    quest.tasks.filter(
+        (_, taskIndex) =>
+            savedProgress[
+                getID(
+                    columnIndex,
+                    questIndex,
+                    taskIndex
+                )
+            ]
+    ).length;
+
 
             summary.innerHTML = `
                 <div class="quest-title">
-                    ${quest.name}
+                    ${quest.name} - ${completedTasks}/${quest.tasks.length}
                 </div>
 
                 <div class="quest-description">
