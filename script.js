@@ -366,7 +366,7 @@ function render() {
 
                         questElement.classList.toggle(
                             "completed",
-                            quest,tasks.every(
+                            quest.tasks.every(
                                 (_, taskIndex) =>
                                     savedProgress[
                                         getID(
