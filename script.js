@@ -86,7 +86,7 @@ const questData = [
     },
 
     {
-        name: "Mining",
+        name: "Chapter 3",
         description: "Resources and exploration",
         quests: [
             {
@@ -112,7 +112,7 @@ const questData = [
     },
 
     {
-        name: "Mekanism",
+        name: "Chapter 4",
         description: "Industrial progression",
         quests: [
             {
@@ -135,7 +135,7 @@ const questData = [
     },
 
     {
-        name: "Chapter 3",
+        name: "Creative",
         description: "Resource crops",
         quests: [
             {
@@ -159,7 +159,7 @@ const questData = [
     },
 
     {
-        name: "Chapter 4",
+        name: "Automation",
         description: "Make your base work for you",
         quests: [
             {
@@ -183,7 +183,7 @@ const questData = [
     },
 
     {
-        name: "Creative",
+        name: "Endgame",
         description: "Final progression",
         quests: [
             {
