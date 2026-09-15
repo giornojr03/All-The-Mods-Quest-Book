@@ -1,6 +1,6 @@
 const questData = [
     {
-        name: "Getting Started",
+        name: "Welcome Board",
         description: "Your first steps",
         quests: [
             {
