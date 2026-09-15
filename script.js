@@ -319,8 +319,27 @@ function render() {
                     !!savedProgress[id];
 
                 checkbox.addEventListener(
-                    "change",
-                    () => {
+    "click",
+    (event) => {
+        event.stopPropagation();
+    }
+);
+
+checkbox.addEventListener(
+    "change",
+    () => {
+
+        savedProgress[id] =
+            checkbox.checked;
+
+        localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify(savedProgress)
+        );
+
+        render();
+    }
+);
 
                         savedProgress[id] =
                             checkbox.checked;
