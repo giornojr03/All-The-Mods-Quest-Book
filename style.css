@@ -48,6 +48,8 @@ p {
 
 .progress-box strong {
     float: right;
+    font-size: 18px;
+    color: #f52542;
 }
 
 .progress {
