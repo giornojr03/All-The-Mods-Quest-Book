@@ -256,3 +256,13 @@ footer {
     text-decoration: line-through;
     opacity: 0.55;
     }
+.quest-title::before {
+    content: "▸";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.15s ease;
+}
+
+.quest.open .quest-title::before {
+    transform: rotate(90deg);
+}
