@@ -184,11 +184,21 @@ summary::-webkit-details-marker {
 
 .check {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 
     margin: 9px 0;
 
+    padding: 8px 10px;
+
+    border-radius: 7px;
+
     cursor: pointer;
+
+    transition: background 0.15s ease;
+}
+
+.check:hover {
+    background: #232831;
 }
 
 .check input {
