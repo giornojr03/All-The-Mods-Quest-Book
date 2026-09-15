@@ -250,6 +250,7 @@ button:hover {
 .quest.completed .quest-title::before {
     content: "✓ ";
     color: #67d36f;
+    transform: none;
 }
 
 footer {
