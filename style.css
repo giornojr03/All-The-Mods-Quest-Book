@@ -63,7 +63,7 @@ p {
 .progress div {
     height: 100%;
     width: 0%;
-    background: #67d36f;
+    background: #f5c542;
     transition: width 0.4s ease;
 }
 
