@@ -502,7 +502,7 @@ document.getElementById(
         document
             .querySelectorAll(".quest")
             .forEach(
-                quest => quest.open = true
+                quest => quest.classList.add("open")
             );
 
     }
@@ -518,7 +518,7 @@ document.getElementById(
         document
             .querySelectorAll(".quest")
             .forEach(
-                quest => quest.open = false
+                quest => quest.classList.remove("open")
             );
 
     }
