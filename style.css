@@ -251,3 +251,7 @@ footer {
     .quest.open .quest-body {
         display: block;
     }
+.check:has(input:checked) span {
+    text-decoration: line-through;
+    opacity: 0.55;
+    }
