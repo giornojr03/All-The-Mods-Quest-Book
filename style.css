@@ -153,6 +153,7 @@ button:hover {
 
 .quest:hover {
     background: #303640;
+    box-shadow: inset 3px 0 0 #f5c542;
 }
 
 .quest:last-child {
