@@ -144,6 +144,11 @@ button:hover {
 
 .quest {
     border-bottom: 1px solid #30343d;
+    transition: background 0.15s ease;
+}
+
+.quest:hover {
+    background: #20242b;
 }
 
 .quest:last-child {
