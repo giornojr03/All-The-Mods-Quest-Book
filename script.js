@@ -364,8 +364,22 @@ function render() {
                             JSON.stringify(savedProgress)
                         );
 
+                        questElement.classList.toggle(
+                            "completed",
+                            quest,tasks.every(
+                                (_, taskIndex) =>
+                                    savedProgress[
+                                        getID(
+                                            columnIndex,
+                                            questIndex,
+                                            taskIndex
+                                        )
+                                    ]
+                            )
+                        );
 
-                        render();
+                        updateProgress();
+
                     }
                 );
 
