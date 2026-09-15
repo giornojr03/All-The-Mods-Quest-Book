@@ -31,7 +31,7 @@ const questData = [
     },
 
     {
-        name: "Storage",
+        name: "Chapter 1",
         description: "Organize your base",
         quests: [
             {
@@ -63,7 +63,7 @@ const questData = [
     },
 
     {
-        name: "Power",
+        name: "Chapter 2",
         description: "Generate FE",
         quests: [
             {
@@ -135,7 +135,7 @@ const questData = [
     },
 
     {
-        name: "Mystical Agriculture",
+        name: "Chapter 3",
         description: "Resource crops",
         quests: [
             {
@@ -159,7 +159,7 @@ const questData = [
     },
 
     {
-        name: "Automation",
+        name: "Chapter 4",
         description: "Make your base work for you",
         quests: [
             {
@@ -183,7 +183,7 @@ const questData = [
     },
 
     {
-        name: "Endgame",
+        name: "Creative",
         description: "Final progression",
         quests: [
             {
