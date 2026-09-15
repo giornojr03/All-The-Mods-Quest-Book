@@ -207,21 +207,29 @@ const questData = [
     }
 ];
 
+
 const STORAGE_KEY = "atm10QuestProgress";
+
 
 let savedProgress =
     JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
 
 function getID(column, quest, task) {
     return `${column}-${quest}-${task}`;
 }
 
+
 function render() {
-    const container = document.getElementById("columns");
+
+    const container =
+        document.getElementById("columns");
+
     const search =
         document.getElementById("search").value.toLowerCase();
 
     container.innerHTML = "";
+
 
     questData.forEach((column, columnIndex) => {
 
@@ -230,17 +238,21 @@ function render() {
 
         columnElement.className = "column";
 
+
         const header =
             document.createElement("div");
 
         header.className = "column-header";
+
 
         header.innerHTML = `
             <h2>${column.name}</h2>
             <small>${column.description}</small>
         `;
 
+
         columnElement.appendChild(header);
+
 
         column.quests.forEach((quest, questIndex) => {
 
@@ -251,14 +263,17 @@ function render() {
                 quest.tasks.join(" ")
             ).toLowerCase();
 
+
             if (search && !text.includes(search)) {
                 return;
             }
+
 
             const questElement =
                 document.createElement("details");
 
             questElement.className = "quest";
+
 
             const completed =
                 quest.tasks.every(
@@ -272,12 +287,15 @@ function render() {
                         ]
                 );
 
+
             if (completed) {
                 questElement.classList.add("completed");
             }
 
+
             const summary =
                 document.createElement("summary");
+
 
             summary.innerHTML = `
                 <div class="quest-title">
@@ -289,12 +307,15 @@ function render() {
                 </div>
             `;
 
+
             questElement.appendChild(summary);
+
 
             const body =
                 document.createElement("div");
 
             body.className = "quest-body";
+
 
             quest.tasks.forEach((task, taskIndex) => {
 
@@ -303,10 +324,12 @@ function render() {
 
                 label.className = "check";
 
+
                 const checkbox =
                     document.createElement("input");
 
                 checkbox.type = "checkbox";
+
 
                 const id =
                     getID(
@@ -315,96 +338,114 @@ function render() {
                         taskIndex
                     );
 
+
                 checkbox.checked =
                     !!savedProgress[id];
 
+
                 checkbox.addEventListener(
-    "click",
-    (event) => {
-        event.stopPropagation();
-    }
-);
+                    "click",
+                    (event) => {
+                        event.stopPropagation();
+                    }
+                );
 
-checkbox.addEventListener(
-    "change",
-    () => {
 
-        savedProgress[id] =
-            checkbox.checked;
-
-        localStorage.setItem(
-            STORAGE_KEY,
-            JSON.stringify(savedProgress)
-        );
-
-        render();
-    }
-);
+                checkbox.addEventListener(
+                    "change",
+                    () => {
 
                         savedProgress[id] =
                             checkbox.checked;
+
 
                         localStorage.setItem(
                             STORAGE_KEY,
                             JSON.stringify(savedProgress)
                         );
 
+
                         render();
                     }
                 );
 
+
                 label.appendChild(checkbox);
+
 
                 const text =
                     document.createElement("span");
 
                 text.textContent = task;
 
+
                 label.appendChild(text);
+
 
                 body.appendChild(label);
             });
 
+
             questElement.appendChild(body);
+
 
             columnElement.appendChild(questElement);
         });
 
+
         if (columnElement.querySelector(".quest")) {
-            container.appendChild(columnElement);
+
+            container.appendChild(
+                columnElement
+            );
         }
+
     });
+
 
     updateProgress();
 }
+
 
 function updateProgress() {
 
     let total = 0;
     let completed = 0;
 
-    questData.forEach((column, columnIndex) => {
 
-        column.quests.forEach((quest, questIndex) => {
+    questData.forEach(
+        (column, columnIndex) => {
 
-            quest.tasks.forEach((_, taskIndex) => {
+            column.quests.forEach(
+                (quest, questIndex) => {
 
-                total++;
+                    quest.tasks.forEach(
+                        (_, taskIndex) => {
 
-                if (
-                    savedProgress[
-                        getID(
-                            columnIndex,
-                            questIndex,
-                            taskIndex
-                        )
-                    ]
-                ) {
-                    completed++;
+                            total++;
+
+
+                            if (
+                                savedProgress[
+                                    getID(
+                                        columnIndex,
+                                        questIndex,
+                                        taskIndex
+                                    )
+                                ]
+                            ) {
+                                completed++;
+                            }
+
+                        }
+                    );
+
                 }
-            });
-        });
-    });
+            );
+
+        }
+    );
+
 
     const percentage =
         total === 0
@@ -413,46 +454,84 @@ function updateProgress() {
                 completed / total * 100
             );
 
-    document.getElementById("progressText")
-        .textContent = percentage + "%";
 
-    document.getElementById("progressBar")
-        .style.width = percentage + "%";
+    document.getElementById(
+        "progressText"
+    ).textContent =
+        percentage + "%";
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        percentage + "%";
 }
 
-document.getElementById("search")
-    .addEventListener("input", render);
 
-document.getElementById("expandAll")
-    .addEventListener("click", () => {
+document.getElementById(
+    "search"
+).addEventListener(
+    "input",
+    render
+);
+
+
+document.getElementById(
+    "expandAll"
+).addEventListener(
+    "click",
+    () => {
 
         document
             .querySelectorAll(".quest")
-            .forEach(quest => quest.open = true);
+            .forEach(
+                quest => quest.open = true
+            );
 
-    });
+    }
+);
 
-document.getElementById("collapseAll")
-    .addEventListener("click", () => {
+
+document.getElementById(
+    "collapseAll"
+).addEventListener(
+    "click",
+    () => {
 
         document
             .querySelectorAll(".quest")
-            .forEach(quest => quest.open = false);
+            .forEach(
+                quest => quest.open = false
+            );
 
-    });
+    }
+);
 
-document.getElementById("reset")
-    .addEventListener("click", () => {
 
-        if (confirm("Reset all quest progress?")) {
+document.getElementById(
+    "reset"
+).addEventListener(
+    "click",
+    () => {
+
+        if (
+            confirm(
+                "Reset all quest progress?"
+            )
+        ) {
 
             savedProgress = {};
 
-            localStorage.removeItem(STORAGE_KEY);
+            localStorage.removeItem(
+                STORAGE_KEY
+            );
 
             render();
+
         }
 
-    });
+    }
+);
+
 
 render();
