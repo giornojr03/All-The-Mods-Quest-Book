@@ -270,7 +270,7 @@ function render() {
 
 
             const questElement =
-                document.createElement("details");
+                document.createElement("div");
 
             questElement.className = "quest";
 
@@ -294,7 +294,7 @@ function render() {
 
 
             const summary =
-                document.createElement("summary");
+                document.createElement("div");
 
 
             summary.innerHTML = `
@@ -309,6 +309,9 @@ function render() {
 
 
             questElement.appendChild(summary);
+            summary.addEventListener("click", () => {
+                questElement.classList.toggle("open");
+            });
 
 
             const body =
