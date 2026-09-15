@@ -62,7 +62,7 @@ p {
     height: 100%;
     width: 0%;
     background: #67d36f;
-    transition: width 0.2s;
+    transition: width 0.4s ease;
 }
 
 main {
