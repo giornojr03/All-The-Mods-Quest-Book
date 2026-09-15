@@ -392,7 +392,20 @@ function render() {
                                     ]
                             )
                         );
+const currentCompleted =
+    quest.tasks.filter(
+        (_, taskIndex) =>
+            savedProgress[
+                getID(
+                    columnIndex,
+                    questIndex,
+                    taskIndex
+                )
+            ]
+    ).length;
 
+questElement.querySelector(".quest-title").textContent =
+    `${quest.name} - ${currentCompleted}/${quest.tasks.length}`;
                         updateProgress();
 
                     }
