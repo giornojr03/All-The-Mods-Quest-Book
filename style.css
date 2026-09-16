@@ -300,6 +300,7 @@ footer {
     align-items: flex-end;
     justify-content: flex-end;
     align-self: end;
+    width: 100%;
 }
 
 .top-nav button {
