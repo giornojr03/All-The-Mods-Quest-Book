@@ -283,3 +283,27 @@ footer {
     height: auto;
     display: block;
 }
+.top-nav {
+    display: flex;
+    gap: 6px;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: end;
+}
+
+.top-nav button {
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #9da5b1;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.top-nav button:hover {
+    color: #f5c542;
+    background: #111e2f;
+    border-color: #155b91;
+    box-shadow: 0 0 10px rgba(21, 91, 145, 0.35);
+}
