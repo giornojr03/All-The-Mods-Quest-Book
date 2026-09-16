@@ -602,3 +602,4 @@ function showHome() {
 function showQuestbook() {
     document.getElementById("columns").style.display = "grid";
 }
+showHome();
