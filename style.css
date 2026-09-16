@@ -278,3 +278,8 @@ footer {
         grid-auto-columns: 86vw;
     }
 }
+.atm10-logo {
+    width: 180px;
+    height: auto;
+    display: block;
+}
