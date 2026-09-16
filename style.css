@@ -289,7 +289,7 @@ footer {
     display: flex;
     gap: 6px;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-start;
     align-self: end;
 }
 
