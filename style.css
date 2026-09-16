@@ -300,7 +300,6 @@ footer {
     align-items: flex-end;
     justify-content: center;
     align-self: end;
-    width: 100%;
 }
 .header-search {
     width: 220px;
