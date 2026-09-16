@@ -266,12 +266,6 @@ footer {
 }
 
 @media (max-width: 700px) {
-    header {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 15px;
-    }
-
     .home-sections {
         display: flex;
         flex-direction: column;
