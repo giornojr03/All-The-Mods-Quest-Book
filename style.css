@@ -266,6 +266,11 @@ footer {
 }
 
 @media (max-width: 700px) {
+    .atm10-logo {
+        width: 170px;
+        max-width: 170px;
+    }
+
     .home-sections {
         display: flex;
         flex-direction: column;
@@ -276,7 +281,6 @@ footer {
         min-height: 120px;
     }
 }
-
     .progress-box {
         width: 100%;
     }
