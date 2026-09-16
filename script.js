@@ -606,6 +606,7 @@ function showXPage() {
     document.getElementById("columns").style.display = "none";
     document.querySelector("footer").style.display = "none";
     document.getElementById("x-page").style.display = "block";
+}
 function showQuestbook() {
     document.querySelector(".home-sections").style.display = "none";
     document.querySelector(".toolbar").style.display = "flex";
