@@ -594,10 +594,11 @@ document.getElementById(
 
 render();
 function showHome() {
+    document.querySelector(".home-sections").style.display = "flex";
     document.querySelector(".toolbar").style.display = "none";
     document.getElementById("columns").style.display = "none";
-    document.querySelector(".home-sections").style.display = "flex";
     document.querySelector("footer").style.display = "none";
+    document.getElementById("x-page").style.display = "none";
 }
 function showXPage() {
     document.querySelector(".home-sections").style.display = "none";
