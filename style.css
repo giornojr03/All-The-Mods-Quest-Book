@@ -271,6 +271,14 @@ footer {
         justify-items: center;
         gap: 15px;
     }
+    .home-sections {
+    flex-direction: column;
+}
+
+.home-box {
+    width: 100%;
+    min-height: 120px;
+}
 
     .progress-box {
         width: 100%;
