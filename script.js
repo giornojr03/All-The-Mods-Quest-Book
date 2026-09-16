@@ -451,12 +451,6 @@ questElement.querySelector(".quest-title").textContent =
             )
         );
 
-        if (allComplete) {
-            header.classList.add("all-complete");
-        }
-                
-
-    });
     
            if (allComplete) {
             header.classList.add("all-complete");
