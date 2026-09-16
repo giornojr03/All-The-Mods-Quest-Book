@@ -608,6 +608,7 @@ function showXPage() {
     document.getElementById("x-page").style.display = "block";
 }
 function showQuestbook() {
+    alert("Questbook clicked!");
     document.querySelector(".home-sections").style.display = "none";
     document.querySelector(".toolbar").style.display = "flex";
     document.getElementById("columns").style.display = "grid";
