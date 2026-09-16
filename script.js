@@ -596,3 +596,6 @@ render();
 function showHome() {
     document.getElementById("columns").style.display = "none";
 }
+function showQuestbook() {
+    document.getElementById("columns").style.display = "grid";
+}
