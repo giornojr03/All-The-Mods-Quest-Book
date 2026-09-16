@@ -604,5 +604,6 @@ function showXPage() {
     document.querySelector(".toolbar").style.display = "none";
     document.getElementById("columns").style.display = "none";
     document.querySelector("footer").style.display = "none";
+    document.getElementById("x-page").style.display = "block";
 }
 showHome();
