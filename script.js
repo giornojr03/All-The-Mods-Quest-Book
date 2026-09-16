@@ -424,27 +424,31 @@ function render() {
                          * The header turns green when every
                          * task in that column is complete.
                          */
-                     questData.forEach((column, columnIndex) => {
-    const header = document.querySelector(
-        `.column-header[data-column-index="${columnIndex}"]`
-    );
+                        questData.forEach(
+                            (column, columnIndex) => {
 
-    if (!header) return;
+                                const header =
+                                    document.querySelector(
+                                        `.column-header[data-column-index="${columnIndex}"]`
+                                    );
 
-    const allComplete = column.quests.every((quest, questIndex) =>
-        quest.tasks.every((_, taskIndex) =>
-            savedProgress[
-                getID(columnIndex, questIndex, taskIndex)
-            ] === true
-        )
-    );
+                                if (!header) return;
 
-    if (allComplete) {
-        header.classList.add("all-complete");
-    } else {
-        header.classList.remove("all-complete");
-    }
-});
+
+                                const allComplete =
+                                    column.quests.every(
+                                        (quest, questIndex) =>
+                                            quest.tasks.every(
+                                                (_, taskIndex) =>
+                                                    savedProgress[
+                                                        getID(
+                                                            columnIndex,
+                                                            questIndex,
+                                                            taskIndex
+                                                        )
+                                                    ]
+                                            )
+                                    );
 
 
                                 header.classList.toggle(
