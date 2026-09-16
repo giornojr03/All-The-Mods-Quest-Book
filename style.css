@@ -262,7 +262,7 @@ footer {
     color: #707885;
     font-size: 12px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 @media (max-width: 700px) {
