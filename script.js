@@ -231,6 +231,10 @@ function render() {
 
 
     questData.forEach((column, columnIndex) => {
+        header.classList.toggle(
+            "all-complete",
+            allcomplete
+    );
 
         const columnElement =
             document.createElement("div");
