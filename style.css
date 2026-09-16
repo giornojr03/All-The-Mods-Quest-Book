@@ -308,3 +308,10 @@ footer {
     border-bottom-color: #155b91;
     box-shadow: 0 4px 10px rgba(21, 91, 145, 0.35);
 }
+.home-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 5px;
+}
