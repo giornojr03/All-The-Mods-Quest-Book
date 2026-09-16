@@ -14,9 +14,9 @@ header {
     background: #0A1422;
     border-bottom: 1px solid #155b91;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+    display: grid;
+    grid-template-columns: 1fr auto 240px;
+    align-items: center;
     gap: 30px;
 
     box-shadow: 0 4px 20px rgba(0, 80, 160, 0.2);
