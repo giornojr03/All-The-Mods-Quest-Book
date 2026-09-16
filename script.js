@@ -599,7 +599,10 @@ function showHome() {
     document.querySelector(".home-sections").style.display = "flex";
     document.querySelector("footer").style.display = "none";
 }
-function showQuestbook() {
-    document.getElementById("columns").style.display = "grid";
+function showXPage() {
+    document.querySelector(".home-sections").style.display = "none";
+    document.querySelector(".toolbar").style.display = "none";
+    document.getElementById("columns").style.display = "none";
+    document.querySelector("footer").style.display = "none";
 }
 showHome();
