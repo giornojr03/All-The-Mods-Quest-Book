@@ -457,7 +457,30 @@ questElement.querySelector(".quest-title").textContent =
                 
 
     });
+    
+           if (allComplete) {
+            header.classList.add("all-complete");
+        }
 
+    });
+
+    questData.forEach((column, columnIndex) => {
+        const header = document.querySelector(
+            `.column-header[data-column-index="${columnIndex}"]`
+        );
+
+        if (!header) return;
+
+        const allComplete = column.quests.every((quest, questIndex) =>
+            quest.tasks.every((_, taskIndex) =>
+                savedProgress[
+                    getID(columnIndex, questIndex, taskIndex)
+                ]
+            )
+        );
+
+        header.classList.toggle("all-complete", allComplete);
+    });
 
     updateProgress();
 }
