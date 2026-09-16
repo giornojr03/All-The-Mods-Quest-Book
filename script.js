@@ -210,7 +210,6 @@ const questData = [
 
 const STORAGE_KEY = "atm10QuestProgress";
 
-
 let savedProgress =
     JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 
@@ -298,16 +297,16 @@ function render() {
                 document.createElement("div");
 
             const completedTasks =
-    quest.tasks.filter(
-        (_, taskIndex) =>
-            savedProgress[
-                getID(
-                    columnIndex,
-                    questIndex,
-                    taskIndex
-                )
-            ]
-    ).length;
+                quest.tasks.filter(
+                    (_, taskIndex) =>
+                        savedProgress[
+                            getID(
+                                columnIndex,
+                                questIndex,
+                                taskIndex
+                            )
+                        ]
+                ).length;
 
 
             summary.innerHTML = `
@@ -322,6 +321,7 @@ function render() {
 
 
             questElement.appendChild(summary);
+
             summary.addEventListener("click", () => {
                 questElement.classList.toggle("open");
             });
@@ -380,8 +380,8 @@ function render() {
                             JSON.stringify(savedProgress)
                         );
 
-                        questElement.classList.toggle(
-                            "completed",
+
+                        const questCompleted =
                             quest.tasks.every(
                                 (_, taskIndex) =>
                                     savedProgress[
@@ -391,22 +391,74 @@ function render() {
                                             taskIndex
                                         )
                                     ]
-                            )
-                        );
-const currentCompleted =
-    quest.tasks.filter(
-        (_, taskIndex) =>
-            savedProgress[
-                getID(
-                    columnIndex,
-                    questIndex,
-                    taskIndex
-                )
-            ]
-    ).length;
+                            );
 
-questElement.querySelector(".quest-title").textContent =
-    `${quest.name} - ${currentCompleted}/${quest.tasks.length}`;
+
+                        questElement.classList.toggle(
+                            "completed",
+                            questCompleted
+                        );
+
+
+                        const currentCompleted =
+                            quest.tasks.filter(
+                                (_, taskIndex) =>
+                                    savedProgress[
+                                        getID(
+                                            columnIndex,
+                                            questIndex,
+                                            taskIndex
+                                        )
+                                    ]
+                            ).length;
+
+
+                        questElement.querySelector(
+                            ".quest-title"
+                        ).textContent =
+                            `${quest.name} - ${currentCompleted}/${quest.tasks.length}`;
+
+
+                        /*
+                         * Check every column live.
+                         * The header turns green when every
+                         * task in that column is complete.
+                         */
+                        questData.forEach(
+                            (column, columnIndex) => {
+
+                                const header =
+                                    document.querySelector(
+                                        `.column-header[data-column-index="${columnIndex}"]`
+                                    );
+
+                                if (!header) return;
+
+
+                                const allComplete =
+                                    column.quests.every(
+                                        (quest, questIndex) =>
+                                            quest.tasks.every(
+                                                (_, taskIndex) =>
+                                                    savedProgress[
+                                                        getID(
+                                                            columnIndex,
+                                                            questIndex,
+                                                            taskIndex
+                                                        )
+                                                    ]
+                                            )
+                                    );
+
+
+                                header.classList.toggle(
+                                    "all-complete",
+                                    allComplete
+                                );
+                            }
+                        );
+
+
                         updateProgress();
 
                     }
@@ -443,38 +495,34 @@ questElement.querySelector(".quest-title").textContent =
             );
         }
 
-        const allComplete = column.quests.every((quest, questIndex) =>
-            quest.tasks.every((_, taskIndex) =>
-                savedProgress[
-                    getID(columnIndex, questIndex, taskIndex)
-                ]
-            )
-        );
 
-    
-           if (allComplete) {
-            header.classList.add("all-complete");
-        }
+        /*
+         * Set the correct header color when
+         * the questbook is first rendered.
+         */
+        const allComplete =
+            column.quests.every(
+                (quest, questIndex) =>
+                    quest.tasks.every(
+                        (_, taskIndex) =>
+                            savedProgress[
+                                getID(
+                                    columnIndex,
+                                    questIndex,
+                                    taskIndex
+                                )
+                            ]
+                    )
+            );
+
+
+        header.classList.toggle(
+            "all-complete",
+            allComplete
+        );
 
     });
 
-    questData.forEach((column, columnIndex) => {
-        const header = document.querySelector(
-            `.column-header[data-column-index="${columnIndex}"]`
-        );
-
-        if (!header) return;
-
-        const allComplete = column.quests.every((quest, questIndex) =>
-            quest.tasks.every((_, taskIndex) =>
-                savedProgress[
-                    getID(columnIndex, questIndex, taskIndex)
-                ]
-            )
-        );
-
-        header.classList.toggle("all-complete", allComplete);
-    });
 
     updateProgress();
 }
@@ -610,6 +658,8 @@ document.getElementById(
 
 
 render();
+
+
 function showHome() {
     document.querySelector(".home-sections").style.display = "flex";
     document.querySelector(".toolbar").style.display = "none";
@@ -617,6 +667,8 @@ function showHome() {
     document.querySelector("footer").style.display = "none";
     document.getElementById("x-page").style.display = "none";
 }
+
+
 function showXPage() {
     document.querySelector(".home-sections").style.display = "none";
     document.querySelector(".toolbar").style.display = "none";
@@ -624,6 +676,8 @@ function showXPage() {
     document.querySelector("footer").style.display = "none";
     document.getElementById("x-page").style.display = "block";
 }
+
+
 function showQuestbook() {
     document.querySelector(".home-sections").style.display = "none";
     document.querySelector(".toolbar").style.display = "flex";
@@ -631,4 +685,6 @@ function showQuestbook() {
     document.querySelector("footer").style.display = "flex";
     document.getElementById("x-page").style.display = "none";
 }
+
+
 showHome();
