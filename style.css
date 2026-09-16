@@ -261,6 +261,8 @@ footer {
     padding: 20px 5vw;
     color: #707885;
     font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 @media (max-width: 700px) {
