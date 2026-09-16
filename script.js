@@ -243,6 +243,7 @@ function render() {
             document.createElement("div");
 
         header.className = "column-header";
+        header.dataset.columnIndex = columnIndex;
 
 
         header.innerHTML = `
@@ -441,6 +442,19 @@ questElement.querySelector(".quest-title").textContent =
                 columnElement
             );
         }
+
+        const allComplete = column.quests.every((quest, questIndex) =>
+            quest.tasks.every((_, taskIndex) =>
+                savedProgress[
+                    getID(columnIndex, questIndex, taskIndex)
+                ]
+            )
+        );
+
+        if (allComplete) {
+            header.classList.add("all-complete");
+        }
+                
 
     });
 
