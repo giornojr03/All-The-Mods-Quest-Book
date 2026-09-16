@@ -231,10 +231,6 @@ function render() {
 
 
     questData.forEach((column, columnIndex) => {
-        header.classList.toggle(
-            "all-complete",
-            allcomplete
-    );
 
         const columnElement =
             document.createElement("div");
@@ -428,31 +424,27 @@ function render() {
                          * The header turns green when every
                          * task in that column is complete.
                          */
-                        questData.forEach(
-                            (column, columnIndex) => {
+                     questData.forEach((column, columnIndex) => {
+    const header = document.querySelector(
+        `.column-header[data-column-index="${columnIndex}"]`
+    );
 
-                                const header =
-                                    document.querySelector(
-                                        `.column-header[data-column-index="${columnIndex}"]`
-                                    );
+    if (!header) return;
 
-                                if (!header) return;
+    const allComplete = column.quests.every((quest, questIndex) =>
+        quest.tasks.every((_, taskIndex) =>
+            savedProgress[
+                getID(columnIndex, questIndex, taskIndex)
+            ] === true
+        )
+    );
 
-
-                                const allComplete =
-                                    column.quests.every(
-                                        (quest, questIndex) =>
-                                            quest.tasks.every(
-                                                (_, taskIndex) =>
-                                                    savedProgress[
-                                                        getID(
-                                                            columnIndex,
-                                                            questIndex,
-                                                            taskIndex
-                                                        )
-                                                    ]
-                                            )
-                                    );
+    if (allComplete) {
+        header.classList.add("all-complete");
+    } else {
+        header.classList.remove("all-complete");
+    }
+});
 
 
                                 header.classList.toggle(
