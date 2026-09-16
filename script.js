@@ -593,3 +593,6 @@ document.getElementById(
 
 
 render();
+function showHome() {
+    document.getElementById("columns").style.display = "none";
+}
