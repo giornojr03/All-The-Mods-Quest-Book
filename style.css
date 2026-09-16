@@ -11,13 +11,15 @@ body {
 
 header {
     padding: 30px 5vw;
-    background: #171a20;
-    border-bottom: 1px solid #353a44;
+    background: #081525;
+    border-bottom: 1px solid #155b91;
 
     display: flex;
     justify-content: space-between;
     align-items: end;
     gap: 30px;
+
+    box-shadow: 0 4px 20px rgba(0, 80, 160, 0.2);
 }
 
 .eyebrow {
