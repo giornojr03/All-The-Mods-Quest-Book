@@ -353,3 +353,6 @@ footer {
     border-color: #f5c542;
     box-shadow: 0 0 12px rgba(245, 197, 66, 0.4);
 }
+#x-page {
+    min-height: 500px;
+}
