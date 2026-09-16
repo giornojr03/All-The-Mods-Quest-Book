@@ -295,7 +295,7 @@ footer {
     padding: 8px 14px;
     border: none;
     border-bottom: 2px solid transparent;
-    background: transparent;
+    background: #0D1928;
     color: #9da5b1;
     font-weight: bold;
     cursor: pointer;
@@ -307,6 +307,10 @@ footer {
     background: #111e2f;
     border-bottom-color: #155b91;
     box-shadow: 0 4px 10px rgba(21, 91, 145, 0.35);
+}
+
+.top-nav button:hover .home-icon {
+    filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(600%) hue-rotate(5deg) brightness(105%);
 }
 .home-icon {
     width: 18px;
