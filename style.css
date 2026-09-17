@@ -343,8 +343,6 @@ footer {
 .questbook-icon {
     width: 22px;
     height: 22px;
-    position: relative;
-    top: 2px;
     object-fit: contain;
     vertical-align: middle;
     margin-right: 5px;
@@ -383,4 +381,7 @@ footer {
 }
 #x-page {
     min-height: 500px;
+}
+.top-nav button:nth-child(2) {
+    transform: translateY(2px);
 }
