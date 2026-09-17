@@ -329,8 +329,9 @@ footer {
     box-shadow: 0 4px 10px rgba(21, 91, 145, 0.35);
 }
 
-.top-nav button:hover .home-icon {
-    filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(600%) hue-rotate(5deg) brightness(105%);
+.top-nav button:hover .home-icon 
+.top-nav button:hover .questbook-icon {
+     filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(600%) hue-rotate(5deg) brightness(105%);
 }
 .home-icon {
     width: 18px;
