@@ -693,5 +693,14 @@ function showProgress() {
     document.getElementById("x-page").style.display = "none";
     document.getElementById("progress-page").style.display = "block";
 }
+function showSettings() {
+    document.querySelector(".home-sections").style.display = "none";
+    document.querySelector(".toolbar").style.display = "none";
+    document.getElementById("columns").style.display = "none";
+    document.querySelector("footer").style.display = "none";
+    document.getElementById("x-page").style.display = "none";
+    document.getElementById("progress-page").style.display = "none";
+    document.getElementById("settings-page").style.display = "block";
+}
 
 showHome();
