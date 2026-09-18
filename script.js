@@ -112,7 +112,7 @@ const questData = [
     },
 
     {
-        name: "Chapter 4",
+        name: "Creative",
         description: "Industrial progression",
         quests: [
             {
@@ -135,7 +135,7 @@ const questData = [
     },
 
     {
-        name: "Creative",
+        name: "Bounty Board",
         description: "Resource crops",
         quests: [
             {
