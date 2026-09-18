@@ -685,6 +685,13 @@ function showQuestbook() {
     document.querySelector("footer").style.display = "flex";
     document.getElementById("x-page").style.display = "none";
 }
-
+function showProgress() {
+    document.querySelector(".home-sections").style.display = "none";
+    document.querySelector(".toolbar").style.display = "none";
+    document.getElementById("columns").style.display = "none";
+    document.querySelector("footer").style.display = "none";
+    document.getElementById("x-page").style.display = "none";
+    document.getElementById("progress-page").style.display = "block";
+}
 
 showHome();
