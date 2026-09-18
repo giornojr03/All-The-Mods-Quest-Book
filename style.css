@@ -382,3 +382,8 @@ footer {
 #x-page {
     min-height: 500px;
 }
+.home-button {
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
