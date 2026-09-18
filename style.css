@@ -399,9 +399,10 @@ footer {
 .home-button {
     padding-top: 11px;
     padding-bottom: 11px;
+    position: relative;
+    top: -2px;
 }
 .questbook-text {
     position: relative;
     top: 2px;
 }
-
