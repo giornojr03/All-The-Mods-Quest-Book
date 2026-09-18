@@ -32,7 +32,7 @@ const questData = [
 
     {
         name: "Chapter 1",
-        description: "Organize your base",
+        description: "Kill Minecraft's 3 Main Bosses",
         quests: [
             {
                 name: "Early Storage",
