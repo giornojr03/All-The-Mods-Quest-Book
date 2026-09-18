@@ -63,7 +63,7 @@ const questData = [
     },
 
     {
-        name: "Chapter 2",
+        name: "AllTheModium Mastery",
         description: "Generate FE",
         quests: [
             {
